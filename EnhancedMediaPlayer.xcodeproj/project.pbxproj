@@ -7,10 +7,22 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		AB26ED582A32628700A8242E /* AVPlayerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB26ED572A32628700A8242E /* AVPlayerView.swift */; };
+		AB26ED5A2A3829BF00A8242E /* MediaPlayerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB26ED592A3829BF00A8242E /* MediaPlayerViewController.swift */; };
+		AB26ED5C2A3A113A00A8242E /* MediaPlayer.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB26ED5B2A3A113A00A8242E /* MediaPlayer.swift */; };
+		AB26ED5F2A408F7A00A8242E /* View+wrapInButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB26ED5E2A408F7A00A8242E /* View+wrapInButton.swift */; };
+		AB26ED612A408FE500A8242E /* View+readFrame.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB26ED602A408FE400A8242E /* View+readFrame.swift */; };
 		AB4B38F62A2EFD53001390EA /* EnhancedMediaPlayer.docc in Sources */ = {isa = PBXBuildFile; fileRef = AB4B38F52A2EFD53001390EA /* EnhancedMediaPlayer.docc */; };
 		AB4B38FC2A2EFD54001390EA /* EnhancedMediaPlayer.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AB4B38F12A2EFD53001390EA /* EnhancedMediaPlayer.framework */; };
 		AB4B39012A2EFD54001390EA /* EnhancedMediaPlayerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB4B39002A2EFD54001390EA /* EnhancedMediaPlayerTests.swift */; };
 		AB4B39022A2EFD54001390EA /* EnhancedMediaPlayer.h in Headers */ = {isa = PBXBuildFile; fileRef = AB4B38F42A2EFD53001390EA /* EnhancedMediaPlayer.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		AB4B39122A2EFD76001390EA /* EnhancedMediaPlayerSampleApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB4B39112A2EFD76001390EA /* EnhancedMediaPlayerSampleApp.swift */; };
+		AB4B39142A2EFD76001390EA /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB4B39132A2EFD76001390EA /* ContentView.swift */; };
+		AB4B39162A2EFD76001390EA /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = AB4B39152A2EFD76001390EA /* Assets.xcassets */; };
+		AB4B39192A2EFD76001390EA /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = AB4B39182A2EFD76001390EA /* Preview Assets.xcassets */; };
+		AB4B391E2A2F02DB001390EA /* EnhancedMediaPlayer.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AB4B38F12A2EFD53001390EA /* EnhancedMediaPlayer.framework */; };
+		AB4B391F2A2F02DB001390EA /* EnhancedMediaPlayer.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = AB4B38F12A2EFD53001390EA /* EnhancedMediaPlayer.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		AB4B39272A2F071C001390EA /* MediaPlayerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB4B39262A2F071C001390EA /* MediaPlayerView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -21,14 +33,47 @@
 			remoteGlobalIDString = AB4B38F02A2EFD53001390EA;
 			remoteInfo = EnhancedMediaPlayer;
 		};
+		AB4B39202A2F02DB001390EA /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = AB4B38E82A2EFD53001390EA /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = AB4B38F02A2EFD53001390EA;
+			remoteInfo = EnhancedMediaPlayer;
+		};
 /* End PBXContainerItemProxy section */
 
+/* Begin PBXCopyFilesBuildPhase section */
+		AB4B39222A2F02DB001390EA /* Embed Frameworks */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 10;
+			files = (
+				AB4B391F2A2F02DB001390EA /* EnhancedMediaPlayer.framework in Embed Frameworks */,
+			);
+			name = "Embed Frameworks";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
+
 /* Begin PBXFileReference section */
+		AB26ED572A32628700A8242E /* AVPlayerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AVPlayerView.swift; sourceTree = "<group>"; };
+		AB26ED592A3829BF00A8242E /* MediaPlayerViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MediaPlayerViewController.swift; sourceTree = "<group>"; };
+		AB26ED5B2A3A113A00A8242E /* MediaPlayer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MediaPlayer.swift; sourceTree = "<group>"; };
+		AB26ED5E2A408F7A00A8242E /* View+wrapInButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "View+wrapInButton.swift"; sourceTree = "<group>"; };
+		AB26ED602A408FE400A8242E /* View+readFrame.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "View+readFrame.swift"; sourceTree = "<group>"; };
 		AB4B38F12A2EFD53001390EA /* EnhancedMediaPlayer.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = EnhancedMediaPlayer.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		AB4B38F42A2EFD53001390EA /* EnhancedMediaPlayer.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = EnhancedMediaPlayer.h; sourceTree = "<group>"; };
 		AB4B38F52A2EFD53001390EA /* EnhancedMediaPlayer.docc */ = {isa = PBXFileReference; lastKnownFileType = folder.documentationcatalog; path = EnhancedMediaPlayer.docc; sourceTree = "<group>"; };
 		AB4B38FB2A2EFD54001390EA /* EnhancedMediaPlayerTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = EnhancedMediaPlayerTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		AB4B39002A2EFD54001390EA /* EnhancedMediaPlayerTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EnhancedMediaPlayerTests.swift; sourceTree = "<group>"; };
+		AB4B390F2A2EFD76001390EA /* EnhancedMediaPlayerSample.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = EnhancedMediaPlayerSample.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		AB4B39112A2EFD76001390EA /* EnhancedMediaPlayerSampleApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EnhancedMediaPlayerSampleApp.swift; sourceTree = "<group>"; };
+		AB4B39132A2EFD76001390EA /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
+		AB4B39152A2EFD76001390EA /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		AB4B39182A2EFD76001390EA /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
+		AB4B39262A2F071C001390EA /* MediaPlayerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MediaPlayerView.swift; sourceTree = "<group>"; };
+		AB4B39302A31079C001390EA /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -47,15 +92,34 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		AB4B390C2A2EFD76001390EA /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				AB4B391E2A2F02DB001390EA /* EnhancedMediaPlayer.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		AB26ED5D2A408F6000A8242E /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				AB26ED5E2A408F7A00A8242E /* View+wrapInButton.swift */,
+				AB26ED602A408FE400A8242E /* View+readFrame.swift */,
+			);
+			path = Extensions;
+			sourceTree = "<group>";
+		};
 		AB4B38E72A2EFD53001390EA = {
 			isa = PBXGroup;
 			children = (
 				AB4B38F32A2EFD53001390EA /* EnhancedMediaPlayer */,
 				AB4B38FF2A2EFD54001390EA /* EnhancedMediaPlayerTests */,
+				AB4B39102A2EFD76001390EA /* EnhancedMediaPlayerSample */,
 				AB4B38F22A2EFD53001390EA /* Products */,
+				AB4B391D2A2F02DB001390EA /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -64,6 +128,7 @@
 			children = (
 				AB4B38F12A2EFD53001390EA /* EnhancedMediaPlayer.framework */,
 				AB4B38FB2A2EFD54001390EA /* EnhancedMediaPlayerTests.xctest */,
+				AB4B390F2A2EFD76001390EA /* EnhancedMediaPlayerSample.app */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -71,8 +136,14 @@
 		AB4B38F32A2EFD53001390EA /* EnhancedMediaPlayer */ = {
 			isa = PBXGroup;
 			children = (
+				AB4B39262A2F071C001390EA /* MediaPlayerView.swift */,
+				AB26ED572A32628700A8242E /* AVPlayerView.swift */,
+				AB26ED592A3829BF00A8242E /* MediaPlayerViewController.swift */,
+				AB26ED5D2A408F6000A8242E /* Extensions */,
+				AB4B39302A31079C001390EA /* Info.plist */,
 				AB4B38F42A2EFD53001390EA /* EnhancedMediaPlayer.h */,
 				AB4B38F52A2EFD53001390EA /* EnhancedMediaPlayer.docc */,
+				AB26ED5B2A3A113A00A8242E /* MediaPlayer.swift */,
 			);
 			path = EnhancedMediaPlayer;
 			sourceTree = "<group>";
@@ -83,6 +154,32 @@
 				AB4B39002A2EFD54001390EA /* EnhancedMediaPlayerTests.swift */,
 			);
 			path = EnhancedMediaPlayerTests;
+			sourceTree = "<group>";
+		};
+		AB4B39102A2EFD76001390EA /* EnhancedMediaPlayerSample */ = {
+			isa = PBXGroup;
+			children = (
+				AB4B39112A2EFD76001390EA /* EnhancedMediaPlayerSampleApp.swift */,
+				AB4B39132A2EFD76001390EA /* ContentView.swift */,
+				AB4B39152A2EFD76001390EA /* Assets.xcassets */,
+				AB4B39172A2EFD76001390EA /* Preview Content */,
+			);
+			path = EnhancedMediaPlayerSample;
+			sourceTree = "<group>";
+		};
+		AB4B39172A2EFD76001390EA /* Preview Content */ = {
+			isa = PBXGroup;
+			children = (
+				AB4B39182A2EFD76001390EA /* Preview Assets.xcassets */,
+			);
+			path = "Preview Content";
+			sourceTree = "<group>";
+		};
+		AB4B391D2A2F02DB001390EA /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = Frameworks;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -135,6 +232,25 @@
 			productReference = AB4B38FB2A2EFD54001390EA /* EnhancedMediaPlayerTests.xctest */;
 			productType = "com.apple.product-type.bundle.unit-test";
 		};
+		AB4B390E2A2EFD76001390EA /* EnhancedMediaPlayerSample */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = AB4B391A2A2EFD76001390EA /* Build configuration list for PBXNativeTarget "EnhancedMediaPlayerSample" */;
+			buildPhases = (
+				AB4B390B2A2EFD76001390EA /* Sources */,
+				AB4B390C2A2EFD76001390EA /* Frameworks */,
+				AB4B390D2A2EFD76001390EA /* Resources */,
+				AB4B39222A2F02DB001390EA /* Embed Frameworks */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				AB4B39212A2F02DB001390EA /* PBXTargetDependency */,
+			);
+			name = EnhancedMediaPlayerSample;
+			productName = EnhancedMediaPlayerSample;
+			productReference = AB4B390F2A2EFD76001390EA /* EnhancedMediaPlayerSample.app */;
+			productType = "com.apple.product-type.application";
+		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
@@ -149,6 +265,9 @@
 						CreatedOnToolsVersion = 14.3;
 					};
 					AB4B38FA2A2EFD54001390EA = {
+						CreatedOnToolsVersion = 14.3;
+					};
+					AB4B390E2A2EFD76001390EA = {
 						CreatedOnToolsVersion = 14.3;
 					};
 				};
@@ -168,6 +287,7 @@
 			targets = (
 				AB4B38F02A2EFD53001390EA /* EnhancedMediaPlayer */,
 				AB4B38FA2A2EFD54001390EA /* EnhancedMediaPlayerTests */,
+				AB4B390E2A2EFD76001390EA /* EnhancedMediaPlayerSample */,
 			);
 		};
 /* End PBXProject section */
@@ -187,6 +307,15 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		AB4B390D2A2EFD76001390EA /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				AB4B39192A2EFD76001390EA /* Preview Assets.xcassets in Resources */,
+				AB4B39162A2EFD76001390EA /* Assets.xcassets in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
@@ -194,7 +323,13 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				AB26ED5A2A3829BF00A8242E /* MediaPlayerViewController.swift in Sources */,
+				AB26ED5F2A408F7A00A8242E /* View+wrapInButton.swift in Sources */,
 				AB4B38F62A2EFD53001390EA /* EnhancedMediaPlayer.docc in Sources */,
+				AB26ED612A408FE500A8242E /* View+readFrame.swift in Sources */,
+				AB4B39272A2F071C001390EA /* MediaPlayerView.swift in Sources */,
+				AB26ED582A32628700A8242E /* AVPlayerView.swift in Sources */,
+				AB26ED5C2A3A113A00A8242E /* MediaPlayer.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -206,6 +341,15 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		AB4B390B2A2EFD76001390EA /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				AB4B39142A2EFD76001390EA /* ContentView.swift in Sources */,
+				AB4B39122A2EFD76001390EA /* EnhancedMediaPlayerSampleApp.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXTargetDependency section */
@@ -213,6 +357,11 @@
 			isa = PBXTargetDependency;
 			target = AB4B38F02A2EFD53001390EA /* EnhancedMediaPlayer */;
 			targetProxy = AB4B38FD2A2EFD54001390EA /* PBXContainerItemProxy */;
+		};
+		AB4B39212A2F02DB001390EA /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = AB4B38F02A2EFD53001390EA /* EnhancedMediaPlayer */;
+			targetProxy = AB4B39202A2F02DB001390EA /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
 
@@ -268,7 +417,6 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 16.4;
 				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
 				MTL_FAST_MATH = YES;
 				ONLY_ACTIVE_ARCH = YES;
@@ -325,7 +473,6 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 16.4;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				MTL_FAST_MATH = YES;
 				SDKROOT = iphoneos;
@@ -348,8 +495,10 @@
 				DYLIB_INSTALL_NAME_BASE = "@rpath";
 				ENABLE_MODULE_VERIFIER = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = EnhancedMediaPlayer/Info.plist;
 				INFOPLIST_KEY_NSHumanReadableCopyright = "";
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -378,8 +527,10 @@
 				DYLIB_INSTALL_NAME_BASE = "@rpath";
 				ENABLE_MODULE_VERIFIER = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = EnhancedMediaPlayer/Info.plist;
 				INFOPLIST_KEY_NSHumanReadableCopyright = "";
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -400,9 +551,11 @@
 		AB4B39092A2EFD54001390EA /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				GENERATE_INFOPLIST_FILE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 15;
 				MARKETING_VERSION = 1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = mobi.profusion.EnhancedMediaPlayerTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -415,13 +568,75 @@
 		AB4B390A2A2EFD54001390EA /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				GENERATE_INFOPLIST_FILE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 15;
 				MARKETING_VERSION = 1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = mobi.profusion.EnhancedMediaPlayerTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+		AB4B391B2A2EFD76001390EA /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_ASSET_PATHS = "\"EnhancedMediaPlayerSample/Preview Content\"";
+				ENABLE_PREVIEWS = YES;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
+				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
+				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				IPHONEOS_DEPLOYMENT_TARGET = 15;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = mobi.profusion.EnhancedMediaPlayerSample;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		AB4B391C2A2EFD76001390EA /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_ASSET_PATHS = "\"EnhancedMediaPlayerSample/Preview Content\"";
+				ENABLE_PREVIEWS = YES;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
+				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
+				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				IPHONEOS_DEPLOYMENT_TARGET = 15;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = mobi.profusion.EnhancedMediaPlayerSample;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
@@ -453,6 +668,15 @@
 			buildConfigurations = (
 				AB4B39092A2EFD54001390EA /* Debug */,
 				AB4B390A2A2EFD54001390EA /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		AB4B391A2A2EFD76001390EA /* Build configuration list for PBXNativeTarget "EnhancedMediaPlayerSample" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				AB4B391B2A2EFD76001390EA /* Debug */,
+				AB4B391C2A2EFD76001390EA /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
