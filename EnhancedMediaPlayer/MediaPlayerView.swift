@@ -4,7 +4,6 @@ import SwiftUI
 
 struct MediaPlayerView: View {
     @ObservedObject var viewModel: MediaPlayerView.ViewModel
-    @State private var showActionButtons = false
     
     init(viewModel: MediaPlayerView.ViewModel) {
         self.viewModel = viewModel
@@ -15,7 +14,7 @@ struct MediaPlayerView: View {
             ZStack {
                 viewModel.playerViewHandler
                 
-                if showActionButtons {
+                if viewModel.shouldRenderOverlay {
                     renderOverlay()
                     renderActionButtons()
                         .padding(.horizontal, geometry.size.width / Constants.paddingWidthDivider)
@@ -23,7 +22,7 @@ struct MediaPlayerView: View {
             }
             .onTapGesture {
                 withAnimation {
-                    showActionButtons.toggle()
+                    viewModel.handleTapOnPlayer()
                 }
             }
         }
@@ -37,26 +36,42 @@ struct MediaPlayerView: View {
     }
 
     @ViewBuilder private func renderActionButtons() -> some View {
-        HStack {
-            renderRewind()
-                .frame(maxWidth: .infinity, alignment: .leading)
-            if viewModel.playerState == .finished {
-                renderReplay()
-            } else {
-                renderPlayPause()
+        ZStack {
+            VStack {
+                HStack {
+                    // TODO: implment ActionButtons top row
+                }
+                .frame(maxWidth: .infinity, maxHeight: .infinity)
+                HStack {
+                    renderRewind()
+                    Spacer()
+                    renderPlayPauseReplay()
+                    Spacer()
+                    renderForward()
+                }
+                .frame(maxWidth: .infinity, maxHeight: .infinity)
+                HStack {
+                    renderSettings()
+                        .padding(.bottom, Constants.settingsIconPadding)
+                }
+                .frame(maxWidth: .infinity, maxHeight: .infinity, alignment: .bottomTrailing)
             }
-            renderForward()
-                .frame(maxWidth: .infinity, alignment: .trailing)
-        }
-        .frame(maxWidth: .infinity)
-    }
 
-    @ViewBuilder private func renderPlayPause() -> some View {
-        renderButton(control: viewModel.playerState == .playing ? .pause : .play)
+            if viewModel.showSettingsMenu {
+               SettingsMenu()
+                    .padding(.bottom, Constants.settingsMenuPadding)
+                    .frame(maxWidth: .infinity, maxHeight: .infinity, alignment: .bottomTrailing)
+            }
+        }
     }
     
-    @ViewBuilder private func renderReplay() -> some View {
-        renderButton(control: .replay)
+    @ViewBuilder private func renderPlayPauseReplay() -> some View {
+        switch viewModel.playerState {
+            case .playing: renderButton(control: .pause)
+            case .paused: renderButton(control: .play)
+            case .finished: renderButton(control: .replay)
+            case .loading: renderButton(control: .play)
+        }
     }
     
     @ViewBuilder private func renderRewind() -> some View {
@@ -71,6 +86,10 @@ struct MediaPlayerView: View {
         }
     }
     
+    @ViewBuilder private func renderSettings() -> some View {
+        renderButton(control: .settings)
+    }
+
     @ViewBuilder private func renderButton(control: Control) -> some View {
         Button(action: { viewModel.onTapAction?(control) }) {
             control.systemImage
@@ -95,9 +114,20 @@ struct MediaPlayerView: View {
 extension MediaPlayerView {
     class ViewModel: ObservableObject {
         @Published var playerState: PlayerState = .loading
+        @Published var showSettingsMenu = false
+        @Published var shouldRenderOverlay = false
+        
         var playerViewHandler: MediaPlayerControllerRepresentable?
 
         var onTapAction: ((Control) -> Void)?
+        
+        func handleTapOnPlayer() {
+            if showSettingsMenu {
+                showSettingsMenu.toggle()
+            } else {
+                shouldRenderOverlay.toggle()
+            }
+        }
     }
 }
 
@@ -107,6 +137,8 @@ extension MediaPlayerView {
         static let iconSize: CGSize = .init(width: 30, height: 30)
         static let paddingWidthDivider: CGFloat = 6
         static let overlayOpacity: CGFloat = 0.3
+        static let settingsIconPadding: CGFloat = 8.0
+        static let settingsMenuPadding: CGFloat = 40.0
     }
 }
 
@@ -126,6 +158,7 @@ extension MediaPlayerView {
         case replay
         case rewind
         case forward
+        case settings
         
         var systemImage: Image {
             switch self {
@@ -139,6 +172,8 @@ extension MediaPlayerView {
                 return Image(systemName: Constants.rewindIcon)
             case .forward:
                 return Image(systemName: Constants.forwardIcon)
+            case .settings:
+                return Image(systemName: Constants.settingsIcon)
             }
         }
     }
@@ -151,6 +186,7 @@ extension MediaPlayerView.Control {
         static let replayIcon = "repeat"
         static let forwardIcon = "goforward"
         static let rewindIcon = "gobackward"
+        static let settingsIcon = "gearshape.fill"
     }
 }
 

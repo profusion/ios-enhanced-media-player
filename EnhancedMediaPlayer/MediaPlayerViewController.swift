@@ -38,6 +38,7 @@ class MediaPlayerViewController: UIHostingController<MediaPlayerView> {
                 case .replay: self.replay()
                 case .rewind: self.rewind()
                 case .forward: self.forward()
+                case .settings: self.toggleSettings()
             }
         }
     }
@@ -72,6 +73,10 @@ class MediaPlayerViewController: UIHostingController<MediaPlayerView> {
     
     private func forward() {
         // TODO: implement forward
+    }
+    
+    private func toggleSettings() {
+        self.viewModel.showSettingsMenu.toggle()
     }
 }
 
