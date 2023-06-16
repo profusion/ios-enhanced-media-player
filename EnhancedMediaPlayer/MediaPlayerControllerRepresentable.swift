@@ -34,6 +34,11 @@ public struct MediaPlayerControllerRepresentable: UIViewControllerRepresentable 
         playerManager.playerController.player?.pause()
     }
 
+    func replay() {
+        playerManager.playerController.player?.seek(to: CMTime.zero)
+        playerManager.playerController.player?.play()
+    }
+
     func observePlayToEnd(onEnd action: @escaping () -> Void) {
         NotificationCenter.default.addObserver(
             forName: NSNotification.Name.AVPlayerItemDidPlayToEndTime,
