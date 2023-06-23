@@ -35,6 +35,7 @@ public class MediaPlayerViewController: UIHostingController<MediaPlayerView> {
             switch control {
                 case .play: self.play()
                 case .pause: self.pause()
+                case .loop: self.loop()
                 case .replay: self.replay()
                 case .rewind: self.rewind()
                 case .forward: self.forward()
@@ -49,9 +50,14 @@ public class MediaPlayerViewController: UIHostingController<MediaPlayerView> {
     private func pause() {
         self.viewModel.playerState = .paused
     }
+
+    private func loop() {
+        self.viewModel.inLoopEnabled.toggle()
+    }
     
     private func replay() {
-        // TODO: implement replay
+        self.viewModel.player.seek(to: CMTime.zero)
+        self.viewModel.playerState = .playing
     }
     
     private func rewind() {
@@ -75,7 +81,12 @@ public class MediaPlayerViewController: UIHostingController<MediaPlayerView> {
             object: viewModel.player.currentItem,
             queue: nil
         ) { _ in
-            self.viewModel.playerState = .finished
+            if self.viewModel.inLoopEnabled {
+                self.replay()
+                self.viewModel.player.play()
+            } else {
+                self.viewModel.playerState = .finished
+            }
         }
     }
 

@@ -40,22 +40,34 @@ public struct MediaPlayerView: View {
     }
 
     @ViewBuilder private func renderActionButtons() -> some View {
-        HStack(spacing: .zero) {
-            renderRewind()
-                .frame(maxWidth: .infinity, alignment: .leading)
-            if viewModel.playerState == .finished {
-                renderReplay()
-            } else {
-                renderPlayPause()
+        VStack(spacing: .zero) {
+            renderLoop()
+                .frame(maxWidth: .infinity, maxHeight: .infinity)
+            HStack(spacing: .zero) {
+                renderRewind()
+                    .frame(maxWidth: .infinity, alignment: .leading)
+                renderMainButtonState()
+                renderForward()
+                    .disabled(viewModel.playerState == .finished)
+                    .frame(maxWidth: .infinity, alignment: .trailing)
             }
-            renderForward()
-                .frame(maxWidth: .infinity, alignment: .trailing)
+            .frame(maxWidth: .infinity)
+            Spacer()
+                .frame(maxWidth: .infinity, maxHeight: .infinity)
         }
-        .frame(maxWidth: .infinity)
     }
 
-    @ViewBuilder private func renderPlayPause() -> some View {
-        renderButton(control: viewModel.playerState == .playing ? .pause : .play)
+    @ViewBuilder private func renderMainButtonState() -> some View {
+        switch viewModel.playerState {
+                case .playing: renderButton(control: .pause)
+                case .paused, .loading: renderButton(control: .play)
+                case .finished: renderButton(control: .replay)
+        }
+    }
+
+    @ViewBuilder private func renderLoop() -> some View {
+        renderButton(control: .loop, color: viewModel.inLoopEnabled ? .blue : .white)
+            .frame(maxWidth: .infinity, alignment: .trailing)
     }
     
     @ViewBuilder private func renderReplay() -> some View {
@@ -74,11 +86,10 @@ public struct MediaPlayerView: View {
         }
     }
     
-    @ViewBuilder private func renderButton(control: Control) -> some View {
+    @ViewBuilder private func renderButton(control: Control, color: Color = .white) -> some View {
         control.systemImage
-            .resizable()
-            .frame(width: Constants.iconSize.width, height: Constants.iconSize.height)
-            .foregroundColor(.white)
+            .font(.system(size: Constants.iconFontSize))
+            .tint(color)
             .wrapInButton(action: { viewModel.onTapAction?(control) })
     }
     
@@ -90,6 +101,7 @@ public struct MediaPlayerView: View {
             Text("10") // TODO: update with amount of rewind / forward
                 .foregroundColor(.white)
                 .font(.system(size: Constants.timeFontSize))
+                .frame(width: Constants.iconSize.width, height: Constants.iconSize.height)
         }
     }
 }
@@ -97,6 +109,7 @@ public struct MediaPlayerView: View {
 extension MediaPlayerView {
     public class ViewModel: ObservableObject {
         @Published var playerState: PlayerState = .loading
+        @Published var inLoopEnabled: Bool = false
         @Published var player: AVPlayer
 
         var onTapAction: ((Control) -> Void)?
@@ -110,6 +123,7 @@ extension MediaPlayerView {
 extension MediaPlayerView {
     enum Constants {
         static let timeFontSize: CGFloat = 12
+        static let iconFontSize: CGFloat = 40.0
         static let iconSize: CGSize = .init(width: 30, height: 30)
         static let paddingWidthDivider: CGFloat = 6
         static let overlayOpacity: CGFloat = 0.3
@@ -129,6 +143,7 @@ extension MediaPlayerView {
     enum Control {
         case play
         case pause
+        case loop
         case replay
         case rewind
         case forward
@@ -139,6 +154,8 @@ extension MediaPlayerView {
                 return Image(systemName: Constants.playIcon)
             case .pause:
                 return Image(systemName: Constants.pauseIcon)
+            case .loop:
+                return Image(systemName: Constants.loopIcon)
             case .replay:
                 return Image(systemName: Constants.replayIcon)
             case .rewind:
@@ -154,6 +171,7 @@ extension MediaPlayerView.Control {
     enum Constants {
         static let playIcon = "play.fill"
         static let pauseIcon = "pause.fill"
+        static let loopIcon = "infinity"
         static let replayIcon = "repeat"
         static let forwardIcon = "goforward"
         static let rewindIcon = "gobackward"
