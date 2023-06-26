@@ -15,6 +15,10 @@ public struct MediaPlayer: UIViewControllerRepresentable {
     }
 
     public func updateUIViewController(_ mediaPlayerController: MediaPlayerViewController, context: Context) {
-        mediaPlayerController.updateURL(with: mediaURL)
+        Task {
+            await MainActor.run {
+                mediaPlayerController.updateURL(with: mediaURL)
+            }
+        }
     }
 }
