@@ -23,6 +23,7 @@
 		AB4B391E2A2F02DB001390EA /* EnhancedMediaPlayer.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AB4B38F12A2EFD53001390EA /* EnhancedMediaPlayer.framework */; };
 		AB4B391F2A2F02DB001390EA /* EnhancedMediaPlayer.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = AB4B38F12A2EFD53001390EA /* EnhancedMediaPlayer.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		AB4B39272A2F071C001390EA /* MediaPlayerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB4B39262A2F071C001390EA /* MediaPlayerView.swift */; };
+		E885EB042A49FBA400541DC6 /* SettingsMenu.swift in Sources */ = {isa = PBXBuildFile; fileRef = E885EB032A49FBA400541DC6 /* SettingsMenu.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -74,6 +75,7 @@
 		AB4B39182A2EFD76001390EA /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		AB4B39262A2F071C001390EA /* MediaPlayerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MediaPlayerView.swift; sourceTree = "<group>"; };
 		AB4B39302A31079C001390EA /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
+		E885EB032A49FBA400541DC6 /* SettingsMenu.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsMenu.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -144,6 +146,7 @@
 				AB4B38F42A2EFD53001390EA /* EnhancedMediaPlayer.h */,
 				AB4B38F52A2EFD53001390EA /* EnhancedMediaPlayer.docc */,
 				AB26ED5B2A3A113A00A8242E /* MediaPlayer.swift */,
+				E885EB032A49FBA400541DC6 /* SettingsMenu.swift */,
 			);
 			path = EnhancedMediaPlayer;
 			sourceTree = "<group>";
@@ -326,6 +329,7 @@
 				AB26ED5A2A3829BF00A8242E /* MediaPlayerViewController.swift in Sources */,
 				AB26ED5F2A408F7A00A8242E /* View+wrapInButton.swift in Sources */,
 				AB4B38F62A2EFD53001390EA /* EnhancedMediaPlayer.docc in Sources */,
+				E885EB042A49FBA400541DC6 /* SettingsMenu.swift in Sources */,
 				AB26ED612A408FE500A8242E /* View+readFrame.swift in Sources */,
 				AB4B39272A2F071C001390EA /* MediaPlayerView.swift in Sources */,
 				AB26ED582A32628700A8242E /* AVPlayerView.swift in Sources */,
