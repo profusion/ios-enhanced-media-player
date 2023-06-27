@@ -5,7 +5,7 @@ import AVFoundation
 
 public struct MediaPlayerView: View {
     @ObservedObject var viewModel: MediaPlayerView.ViewModel
-    @State private var showActionButtons = false
+
     @State private var screenWidth: CGFloat = .zero
 
     @EnvironmentObject var preferences: SettingsPreferences
@@ -18,16 +18,14 @@ public struct MediaPlayerView: View {
         ZStack {
             AVPlayerView(player: viewModel.player, playerState: viewModel.playerState)
             
-            if showActionButtons {
+            if viewModel.isShowingActionButtons {
                 renderOverlay()
                 renderActionButtons()
                     .padding(.horizontal, screenWidth / Constants.paddingWidthDivider)
             }
         }
         .onTapGesture {
-            withAnimation {
-                showActionButtons.toggle()
-            }
+            viewModel.handleTapOnPlayer()
         }
         .readFrame { size in
             screenWidth = size.width
@@ -126,14 +124,21 @@ public struct MediaPlayerView: View {
 
 extension MediaPlayerView {
     public class ViewModel: ObservableObject {
+        @Published var player: AVPlayer
         @Published var playerState: PlayerState = .loading
         @Published var inLoopEnabled: Bool = false
-        @Published var player: AVPlayer
+        @Published var isShowingActionButtons = true
 
         var onTapAction: ((Control) -> Void)?
         
         init(player: AVPlayer) {
             self.player = player
+        }
+
+        func handleTapOnPlayer() {
+            withAnimation {
+                isShowingActionButtons.toggle()
+            }
         }
     }
 }
