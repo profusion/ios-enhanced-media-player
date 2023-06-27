@@ -6,6 +6,8 @@ import EnhancedMediaPlayer
 struct ContentView: View {
     @State private var selected: MediaType = .remoteVideo
 
+    @StateObject private var preferences: SettingsPreferences = .init()
+
     var body: some View {
         VStack(spacing: .zero) {
             MediaPlayer(url: URL(string: selected.url)!)
@@ -18,8 +20,13 @@ struct ContentView: View {
             }
             .pickerStyle(.segmented)
         }
+        .sheet(isPresented: $preferences.isShowingSettingsMenu) {
+            SettingsMenu()
+        }
+        .environmentObject(preferences)
     }
 }
+
 
 extension ContentView {
     enum Constants {

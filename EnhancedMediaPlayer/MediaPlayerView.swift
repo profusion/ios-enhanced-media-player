@@ -7,6 +7,8 @@ public struct MediaPlayerView: View {
     @ObservedObject var viewModel: MediaPlayerView.ViewModel
     @State private var showActionButtons = false
     @State private var screenWidth: CGFloat = .zero
+
+    @EnvironmentObject var preferences: SettingsPreferences
     
     public init(viewModel: MediaPlayerView.ViewModel) {
         self.viewModel = viewModel
@@ -52,8 +54,8 @@ public struct MediaPlayerView: View {
                     .frame(maxWidth: .infinity, alignment: .trailing)
             }
             .frame(maxWidth: .infinity)
-            Spacer()
-                .frame(maxWidth: .infinity, maxHeight: .infinity)
+            renderButton(control: .settings, size: Constants.settingsIconSize)
+                .frame(maxWidth: .infinity, maxHeight: .infinity, alignment: .trailing)
         }
     }
 
@@ -86,11 +88,17 @@ public struct MediaPlayerView: View {
         }
     }
     
-    @ViewBuilder private func renderButton(control: Control, color: Color = .white) -> some View {
+    @ViewBuilder private func renderButton(
+        control: Control,
+        color: Color = .white,
+        size: CGFloat = Constants.iconFontSize
+    ) -> some View {
         control.systemImage
-            .font(.system(size: Constants.iconFontSize))
+            .font(.system(size: size))
             .tint(color)
-            .wrapInButton(action: { viewModel.onTapAction?(control) })
+            .wrapInButton {
+                handleControl(control)
+            }
     }
     
     @ViewBuilder private func renderTimeElapsedWrapper<Content: View>(
@@ -103,6 +111,16 @@ public struct MediaPlayerView: View {
                 .font(.system(size: Constants.timeFontSize))
                 .frame(width: Constants.iconSize.width, height: Constants.iconSize.height)
         }
+    }
+
+   private func handleControl(_ control: Control) {
+        // Not very ideal to do this, but as mentioned, we're abusing UIKit + SwiftUI...
+        guard control != .settings else {
+            preferences.isShowingSettingsMenu.toggle()
+            return
+        }
+
+       viewModel.onTapAction?(control)
     }
 }
 
@@ -123,7 +141,8 @@ extension MediaPlayerView {
 extension MediaPlayerView {
     enum Constants {
         static let timeFontSize: CGFloat = 12
-        static let iconFontSize: CGFloat = 40.0
+        static let iconFontSize: CGFloat = 40
+        static let settingsIconSize: CGFloat = 20
         static let iconSize: CGSize = .init(width: 30, height: 30)
         static let paddingWidthDivider: CGFloat = 6
         static let overlayOpacity: CGFloat = 0.3
@@ -147,6 +166,7 @@ extension MediaPlayerView {
         case replay
         case rewind
         case forward
+        case settings
         
         var systemImage: Image {
             switch self {
@@ -162,6 +182,8 @@ extension MediaPlayerView {
                 return Image(systemName: Constants.rewindIcon)
             case .forward:
                 return Image(systemName: Constants.forwardIcon)
+            case .settings:
+                return Image(systemName: Constants.settingsIcon)
             }
         }
     }
@@ -175,6 +197,7 @@ extension MediaPlayerView.Control {
         static let replayIcon = "repeat"
         static let forwardIcon = "goforward"
         static let rewindIcon = "gobackward"
+        static let settingsIcon = "gearshape.fill"
     }
 }
 
@@ -182,7 +205,9 @@ extension MediaPlayerView.Control {
 struct MediaPlayerView_Previews: PreviewProvider {
     static let testURL =  URL(string: "https://commondatastorage.googleapis.com/gtv-videos-bucket/sample/ForBiggerJoyrides.mp4")!
     static var previews: some View {
-        MediaPlayerView(viewModel: .init(player: .init(url: testURL)))
+        MediaPlayerView(viewModel: .init(
+            player: .init(url: testURL)
+        ))
     }
 }
 #endif
