@@ -82,6 +82,7 @@
 		E8FF42872A4F5D66003AD6B0 /* SettingsPreference.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SettingsPreference.swift; sourceTree = "<group>"; };
 		E8FF42882A4F5D66003AD6B0 /* MediaPlayerControlsView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MediaPlayerControlsView.swift; sourceTree = "<group>"; };
 		E8FF42892A4F5D66003AD6B0 /* MediaPlayerTappableView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MediaPlayerTappableView.swift; sourceTree = "<group>"; };
+		E83D0CDC2A4F39BA00161DB6 /* EnhancedMediaPlayer.podspec */ = {isa = PBXFileReference; lastKnownFileType = text; path = EnhancedMediaPlayer.podspec; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -117,6 +118,7 @@
 				E82C10412A5447060090F94C /* LICENSE.md */,
 				E8FD31182A4F636C0086C7B8 /* Package.swift */,
 				E886E6BA2A4F60B60034A943 /* EnhancedMediaPlayerSample */,
+				E83D0CDC2A4F39BA00161DB6 /* EnhancedMediaPlayer.podspec */,
 				E80D8F152A4E04E600F39D54 /* Sources */,
 				E80D8F132A4E04CB00F39D54 /* Tests */,
 				AB4B38F22A2EFD53001390EA /* Products */,
