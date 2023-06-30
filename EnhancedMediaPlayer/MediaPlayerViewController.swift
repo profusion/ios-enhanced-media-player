@@ -6,8 +6,10 @@ import AVFoundation
 public class MediaPlayerViewController: UIHostingController<MediaPlayerView> {
     private let viewModel: MediaPlayerView.ViewModel
 
-    public init(mediaURL: URL) {
-        self.viewModel = .init(player: .init(url: mediaURL))
+    private var tapTimer: Timer?
+
+    public init(mediaURL: URL, seekFactor: TimeInterval) {
+        viewModel = .init(player: .init(url: mediaURL), seekFactor: seekFactor)
 
         super.init(rootView: .init(viewModel: viewModel))
 
@@ -42,8 +44,27 @@ public class MediaPlayerViewController: UIHostingController<MediaPlayerView> {
                 case .settings: break
             }
         }
+
+        viewModel.onTapSeekArea = { [weak self] seek in
+            guard let self else { return }
+
+            Task {
+                self.onTapSeekArea(seek)
+            }
+        }
+
+        viewModel.onTapControlsTriggerArea = { [weak self] in
+            guard let self else { return }
+
+            switch viewModel.seekState {
+            case .none, .ready:
+                viewModel.areControlsVisible.toggle()
+            case .seeking:
+                break
+            }
+        }
     }
-    
+
     private func play() {
         self.viewModel.playerState = .playing
     }
@@ -62,16 +83,67 @@ public class MediaPlayerViewController: UIHostingController<MediaPlayerView> {
     }
     
     private func rewind() {
-        // TODO: implement rewind
+        seek(forward: false)
     }
     
     private func forward() {
-        // TODO: implement forward
+        seek(forward: true)
+    }
+
+    private func seek(forward: Bool) {
+        let current = viewModel.player.currentTime().seconds
+        let target: Double = forward ? current + viewModel.seekFactor : current - viewModel.seekFactor
+        let result: CMTime =  .init(seconds: target, preferredTimescale: Constants.timeScale)
+        viewModel.player.seek(to: result)
     }
 
     private func onLoad() {
         play()
         observeMediaFinished()
+    }
+
+    private func onTapSeekArea(_ seek: MediaPlayerTappableView.Seek) {
+        guard viewModel.isSeekByTapEnabled else {
+            viewModel.areControlsVisible.toggle()
+            return
+        }
+
+        tapTimer?.invalidate()
+
+        switch viewModel.seekState {
+        case .none:
+            viewModel.seekState = .ready(seek)
+            startResetSeekStateToDefaultTimer()
+        case .ready, .seeking:
+            viewModel.seekState = .seeking(seek)
+            viewModel.areControlsVisible = false
+            startSeekTerminationTimer()
+            performSeek(seek)
+        }
+    }
+
+    private func performSeek(_ seek: MediaPlayerTappableView.Seek) {
+        switch seek {
+        case .backward:
+            rewind()
+        case .forward:
+            forward()
+        }
+    }
+
+    private func startSeekTerminationTimer() {
+        tapTimer = Timer.scheduledTimer(withTimeInterval: Constants.seekTapInterval, repeats: false) { _ in
+            self.viewModel.seekState = .none
+        }
+    }
+
+    private func startResetSeekStateToDefaultTimer() {
+        tapTimer = Timer.scheduledTimer(withTimeInterval: Constants.showControlsDelay, repeats: false) { _ in
+            guard case .ready = self.viewModel.seekState else { return }
+
+            self.viewModel.areControlsVisible.toggle()
+            self.viewModel.seekState = .none
+        }
     }
     
     private func observeMediaFinished() {
@@ -97,6 +169,15 @@ public class MediaPlayerViewController: UIHostingController<MediaPlayerView> {
             name: .AVPlayerItemDidPlayToEndTime,
             object: nil
         )
+    }
+}
+
+extension MediaPlayerViewController {
+    enum Constants {
+        static let timeScale: CMTimeScale = 1
+        static let seekTapInterval: Double = 1
+        static let seekTapAnimationInterval: Double = 0.3
+        static let showControlsDelay: Double = 0.5
     }
 }
 
