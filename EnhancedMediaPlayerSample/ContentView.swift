@@ -10,7 +10,7 @@ struct ContentView: View {
 
     var body: some View {
         VStack(spacing: .zero) {
-            MediaPlayer(url: URL(string: selected.url)!)
+            MediaPlayer(url: URL(string: selected.url)!, seekFactor: Constants.seekFactor)
                 .frame(height: 300)
 
             Picker(Constants.pickerLabel, selection: $selected) {
@@ -34,6 +34,7 @@ extension ContentView {
         static let streamVideo = "Stream Video"
         static let remoteVideo = "Remote Video"
         static let remoteMusic = "Remote Music"
+        static let seekFactor: TimeInterval = 10
     }
 }
 
