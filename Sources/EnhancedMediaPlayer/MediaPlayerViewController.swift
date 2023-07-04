@@ -180,4 +180,3 @@ extension MediaPlayerViewController {
         static let showControlsDelay: Double = 0.5
     }
 }
-
