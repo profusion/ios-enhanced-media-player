@@ -7,26 +7,25 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		AB26ED582A32628700A8242E /* AVPlayerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB26ED572A32628700A8242E /* AVPlayerView.swift */; };
-		AB26ED5A2A3829BF00A8242E /* MediaPlayerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB26ED592A3829BF00A8242E /* MediaPlayerViewController.swift */; };
-		AB26ED5C2A3A113A00A8242E /* MediaPlayer.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB26ED5B2A3A113A00A8242E /* MediaPlayer.swift */; };
-		AB26ED5F2A408F7A00A8242E /* View+wrapInButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB26ED5E2A408F7A00A8242E /* View+wrapInButton.swift */; };
-		AB26ED612A408FE500A8242E /* View+readFrame.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB26ED602A408FE400A8242E /* View+readFrame.swift */; };
-		AB4B38F62A2EFD53001390EA /* EnhancedMediaPlayer.docc in Sources */ = {isa = PBXBuildFile; fileRef = AB4B38F52A2EFD53001390EA /* EnhancedMediaPlayer.docc */; };
 		AB4B38FC2A2EFD54001390EA /* EnhancedMediaPlayer.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AB4B38F12A2EFD53001390EA /* EnhancedMediaPlayer.framework */; };
-		AB4B39012A2EFD54001390EA /* EnhancedMediaPlayerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB4B39002A2EFD54001390EA /* EnhancedMediaPlayerTests.swift */; };
-		AB4B39022A2EFD54001390EA /* EnhancedMediaPlayer.h in Headers */ = {isa = PBXBuildFile; fileRef = AB4B38F42A2EFD53001390EA /* EnhancedMediaPlayer.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		AB4B39122A2EFD76001390EA /* EnhancedMediaPlayerSampleApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB4B39112A2EFD76001390EA /* EnhancedMediaPlayerSampleApp.swift */; };
-		AB4B39142A2EFD76001390EA /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB4B39132A2EFD76001390EA /* ContentView.swift */; };
-		AB4B39162A2EFD76001390EA /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = AB4B39152A2EFD76001390EA /* Assets.xcassets */; };
-		AB4B39192A2EFD76001390EA /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = AB4B39182A2EFD76001390EA /* Preview Assets.xcassets */; };
 		AB4B391E2A2F02DB001390EA /* EnhancedMediaPlayer.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AB4B38F12A2EFD53001390EA /* EnhancedMediaPlayer.framework */; };
 		AB4B391F2A2F02DB001390EA /* EnhancedMediaPlayer.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = AB4B38F12A2EFD53001390EA /* EnhancedMediaPlayer.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
-		AB4B39272A2F071C001390EA /* MediaPlayerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB4B39262A2F071C001390EA /* MediaPlayerView.swift */; };
-		E80F6F912A4B712800F90F7E /* SettingsPreference.swift in Sources */ = {isa = PBXBuildFile; fileRef = E80F6F902A4B712800F90F7E /* SettingsPreference.swift */; };
-		E885EB042A49FBA400541DC6 /* SettingsMenu.swift in Sources */ = {isa = PBXBuildFile; fileRef = E885EB032A49FBA400541DC6 /* SettingsMenu.swift */; };
-		EFD792352A4A01C4007C7652 /* MediaPlayerControlsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EFD792342A4A01C4007C7652 /* MediaPlayerControlsView.swift */; };
-		EFD792372A4A0721007C7652 /* MediaPlayerTappableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EFD792362A4A0721007C7652 /* MediaPlayerTappableView.swift */; };
+		E80D8F352A4E0BAB00F39D54 /* EnhancedMediaPlayer.docc in Sources */ = {isa = PBXBuildFile; fileRef = E80D8F2C2A4E0BAB00F39D54 /* EnhancedMediaPlayer.docc */; };
+		E80D8F362A4E0BAB00F39D54 /* MediaPlayerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E80D8F2D2A4E0BAB00F39D54 /* MediaPlayerView.swift */; };
+		E80D8F372A4E0BAB00F39D54 /* View+readFrame.swift in Sources */ = {isa = PBXBuildFile; fileRef = E80D8F2F2A4E0BAB00F39D54 /* View+readFrame.swift */; };
+		E80D8F382A4E0BAB00F39D54 /* View+wrapInButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = E80D8F302A4E0BAB00F39D54 /* View+wrapInButton.swift */; };
+		E80D8F392A4E0BAB00F39D54 /* AVPlayerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E80D8F312A4E0BAB00F39D54 /* AVPlayerView.swift */; };
+		E80D8F3A2A4E0BAB00F39D54 /* MediaPlayerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E80D8F322A4E0BAB00F39D54 /* MediaPlayerViewController.swift */; };
+		E80D8F3C2A4E0BAB00F39D54 /* MediaPlayer.swift in Sources */ = {isa = PBXBuildFile; fileRef = E80D8F342A4E0BAB00F39D54 /* MediaPlayer.swift */; };
+		E886E6BC2A4F60B60034A943 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E886E6BB2A4F60B60034A943 /* ContentView.swift */; };
+		E886E6C02A4F62050034A943 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E886E6BF2A4F62050034A943 /* Assets.xcassets */; };
+		E886E6C42A4F62130034A943 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E886E6C22A4F62120034A943 /* Preview Assets.xcassets */; };
+		E886E6C52A4F62130034A943 /* EnhancedMediaPlayerSampleApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = E886E6C32A4F62120034A943 /* EnhancedMediaPlayerSampleApp.swift */; };
+		E886E6C62A4F62440034A943 /* EnhancedMediaPlayerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = E886E6BD2A4F61EC0034A943 /* EnhancedMediaPlayerTests.swift */; };
+		E8FF428A2A4F5D66003AD6B0 /* SettingsMenu.swift in Sources */ = {isa = PBXBuildFile; fileRef = E8FF42862A4F5D66003AD6B0 /* SettingsMenu.swift */; };
+		E8FF428B2A4F5D66003AD6B0 /* SettingsPreference.swift in Sources */ = {isa = PBXBuildFile; fileRef = E8FF42872A4F5D66003AD6B0 /* SettingsPreference.swift */; };
+		E8FF428C2A4F5D66003AD6B0 /* MediaPlayerControlsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E8FF42882A4F5D66003AD6B0 /* MediaPlayerControlsView.swift */; };
+		E8FF428D2A4F5D67003AD6B0 /* MediaPlayerTappableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E8FF42892A4F5D66003AD6B0 /* MediaPlayerTappableView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -61,27 +60,26 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
-		AB26ED572A32628700A8242E /* AVPlayerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AVPlayerView.swift; sourceTree = "<group>"; };
-		AB26ED592A3829BF00A8242E /* MediaPlayerViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MediaPlayerViewController.swift; sourceTree = "<group>"; };
-		AB26ED5B2A3A113A00A8242E /* MediaPlayer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MediaPlayer.swift; sourceTree = "<group>"; };
-		AB26ED5E2A408F7A00A8242E /* View+wrapInButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "View+wrapInButton.swift"; sourceTree = "<group>"; };
-		AB26ED602A408FE400A8242E /* View+readFrame.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "View+readFrame.swift"; sourceTree = "<group>"; };
 		AB4B38F12A2EFD53001390EA /* EnhancedMediaPlayer.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = EnhancedMediaPlayer.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		AB4B38F42A2EFD53001390EA /* EnhancedMediaPlayer.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = EnhancedMediaPlayer.h; sourceTree = "<group>"; };
-		AB4B38F52A2EFD53001390EA /* EnhancedMediaPlayer.docc */ = {isa = PBXFileReference; lastKnownFileType = folder.documentationcatalog; path = EnhancedMediaPlayer.docc; sourceTree = "<group>"; };
 		AB4B38FB2A2EFD54001390EA /* EnhancedMediaPlayerTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = EnhancedMediaPlayerTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		AB4B39002A2EFD54001390EA /* EnhancedMediaPlayerTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EnhancedMediaPlayerTests.swift; sourceTree = "<group>"; };
 		AB4B390F2A2EFD76001390EA /* EnhancedMediaPlayerSample.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = EnhancedMediaPlayerSample.app; sourceTree = BUILT_PRODUCTS_DIR; };
-		AB4B39112A2EFD76001390EA /* EnhancedMediaPlayerSampleApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EnhancedMediaPlayerSampleApp.swift; sourceTree = "<group>"; };
-		AB4B39132A2EFD76001390EA /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
-		AB4B39152A2EFD76001390EA /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
-		AB4B39182A2EFD76001390EA /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
-		AB4B39262A2F071C001390EA /* MediaPlayerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MediaPlayerView.swift; sourceTree = "<group>"; };
-		AB4B39302A31079C001390EA /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
-		E80F6F902A4B712800F90F7E /* SettingsPreference.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsPreference.swift; sourceTree = "<group>"; };
-		E885EB032A49FBA400541DC6 /* SettingsMenu.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsMenu.swift; sourceTree = "<group>"; };
-		EFD792342A4A01C4007C7652 /* MediaPlayerControlsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MediaPlayerControlsView.swift; sourceTree = "<group>"; };
-		EFD792362A4A0721007C7652 /* MediaPlayerTappableView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MediaPlayerTappableView.swift; sourceTree = "<group>"; };
+		E80D8F2C2A4E0BAB00F39D54 /* EnhancedMediaPlayer.docc */ = {isa = PBXFileReference; lastKnownFileType = folder.documentationcatalog; path = EnhancedMediaPlayer.docc; sourceTree = "<group>"; };
+		E80D8F2D2A4E0BAB00F39D54 /* MediaPlayerView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MediaPlayerView.swift; sourceTree = "<group>"; };
+		E80D8F2F2A4E0BAB00F39D54 /* View+readFrame.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "View+readFrame.swift"; sourceTree = "<group>"; };
+		E80D8F302A4E0BAB00F39D54 /* View+wrapInButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "View+wrapInButton.swift"; sourceTree = "<group>"; };
+		E80D8F312A4E0BAB00F39D54 /* AVPlayerView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AVPlayerView.swift; sourceTree = "<group>"; };
+		E80D8F322A4E0BAB00F39D54 /* MediaPlayerViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MediaPlayerViewController.swift; sourceTree = "<group>"; };
+		E80D8F332A4E0BAB00F39D54 /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		E80D8F342A4E0BAB00F39D54 /* MediaPlayer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MediaPlayer.swift; sourceTree = "<group>"; };
+		E886E6BB2A4F60B60034A943 /* ContentView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
+		E886E6BD2A4F61EC0034A943 /* EnhancedMediaPlayerTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = EnhancedMediaPlayerTests.swift; path = EnhancedMediaPlayerTests/EnhancedMediaPlayerTests.swift; sourceTree = SOURCE_ROOT; };
+		E886E6BF2A4F62050034A943 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		E886E6C22A4F62120034A943 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
+		E886E6C32A4F62120034A943 /* EnhancedMediaPlayerSampleApp.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EnhancedMediaPlayerSampleApp.swift; sourceTree = "<group>"; };
+		E8FF42862A4F5D66003AD6B0 /* SettingsMenu.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SettingsMenu.swift; sourceTree = "<group>"; };
+		E8FF42872A4F5D66003AD6B0 /* SettingsPreference.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SettingsPreference.swift; sourceTree = "<group>"; };
+		E8FF42882A4F5D66003AD6B0 /* MediaPlayerControlsView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MediaPlayerControlsView.swift; sourceTree = "<group>"; };
+		E8FF42892A4F5D66003AD6B0 /* MediaPlayerTappableView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MediaPlayerTappableView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -111,21 +109,12 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		AB26ED5D2A408F6000A8242E /* Extensions */ = {
-			isa = PBXGroup;
-			children = (
-				AB26ED5E2A408F7A00A8242E /* View+wrapInButton.swift */,
-				AB26ED602A408FE400A8242E /* View+readFrame.swift */,
-			);
-			path = Extensions;
-			sourceTree = "<group>";
-		};
 		AB4B38E72A2EFD53001390EA = {
 			isa = PBXGroup;
 			children = (
-				AB4B38F32A2EFD53001390EA /* EnhancedMediaPlayer */,
-				AB4B38FF2A2EFD54001390EA /* EnhancedMediaPlayerTests */,
-				AB4B39102A2EFD76001390EA /* EnhancedMediaPlayerSample */,
+				E886E6BA2A4F60B60034A943 /* EnhancedMediaPlayerSample */,
+				E80D8F152A4E04E600F39D54 /* Sources */,
+				E80D8F132A4E04CB00F39D54 /* Tests */,
 				AB4B38F22A2EFD53001390EA /* Products */,
 				AB4B391D2A2F02DB001390EA /* Frameworks */,
 			);
@@ -141,57 +130,81 @@
 			name = Products;
 			sourceTree = "<group>";
 		};
-		AB4B38F32A2EFD53001390EA /* EnhancedMediaPlayer */ = {
-			isa = PBXGroup;
-			children = (
-				AB4B39262A2F071C001390EA /* MediaPlayerView.swift */,
-				AB26ED572A32628700A8242E /* AVPlayerView.swift */,
-				AB26ED592A3829BF00A8242E /* MediaPlayerViewController.swift */,
-				AB26ED5D2A408F6000A8242E /* Extensions */,
-				AB4B39302A31079C001390EA /* Info.plist */,
-				AB4B38F42A2EFD53001390EA /* EnhancedMediaPlayer.h */,
-				AB4B38F52A2EFD53001390EA /* EnhancedMediaPlayer.docc */,
-				AB26ED5B2A3A113A00A8242E /* MediaPlayer.swift */,
-				E885EB032A49FBA400541DC6 /* SettingsMenu.swift */,
-				E80F6F902A4B712800F90F7E /* SettingsPreference.swift */,
-				EFD792342A4A01C4007C7652 /* MediaPlayerControlsView.swift */,
-				EFD792362A4A0721007C7652 /* MediaPlayerTappableView.swift */,
-			);
-			path = EnhancedMediaPlayer;
-			sourceTree = "<group>";
-		};
-		AB4B38FF2A2EFD54001390EA /* EnhancedMediaPlayerTests */ = {
-			isa = PBXGroup;
-			children = (
-				AB4B39002A2EFD54001390EA /* EnhancedMediaPlayerTests.swift */,
-			);
-			path = EnhancedMediaPlayerTests;
-			sourceTree = "<group>";
-		};
-		AB4B39102A2EFD76001390EA /* EnhancedMediaPlayerSample */ = {
-			isa = PBXGroup;
-			children = (
-				AB4B39112A2EFD76001390EA /* EnhancedMediaPlayerSampleApp.swift */,
-				AB4B39132A2EFD76001390EA /* ContentView.swift */,
-				AB4B39152A2EFD76001390EA /* Assets.xcassets */,
-				AB4B39172A2EFD76001390EA /* Preview Content */,
-			);
-			path = EnhancedMediaPlayerSample;
-			sourceTree = "<group>";
-		};
-		AB4B39172A2EFD76001390EA /* Preview Content */ = {
-			isa = PBXGroup;
-			children = (
-				AB4B39182A2EFD76001390EA /* Preview Assets.xcassets */,
-			);
-			path = "Preview Content";
-			sourceTree = "<group>";
-		};
 		AB4B391D2A2F02DB001390EA /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
 			);
 			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		E80D8F132A4E04CB00F39D54 /* Tests */ = {
+			isa = PBXGroup;
+			children = (
+				E80D8F142A4E04CB00F39D54 /* EnhancedMediaPlayerTests */,
+			);
+			path = Tests;
+			sourceTree = "<group>";
+		};
+		E80D8F142A4E04CB00F39D54 /* EnhancedMediaPlayerTests */ = {
+			isa = PBXGroup;
+			children = (
+				E886E6BD2A4F61EC0034A943 /* EnhancedMediaPlayerTests.swift */,
+			);
+			path = EnhancedMediaPlayerTests;
+			sourceTree = "<group>";
+		};
+		E80D8F152A4E04E600F39D54 /* Sources */ = {
+			isa = PBXGroup;
+			children = (
+				E80D8F2B2A4E0BAB00F39D54 /* EnhancedMediaPlayer */,
+			);
+			path = Sources;
+			sourceTree = "<group>";
+		};
+		E80D8F2B2A4E0BAB00F39D54 /* EnhancedMediaPlayer */ = {
+			isa = PBXGroup;
+			children = (
+				E8FF42882A4F5D66003AD6B0 /* MediaPlayerControlsView.swift */,
+				E8FF42892A4F5D66003AD6B0 /* MediaPlayerTappableView.swift */,
+				E8FF42862A4F5D66003AD6B0 /* SettingsMenu.swift */,
+				E8FF42872A4F5D66003AD6B0 /* SettingsPreference.swift */,
+				E80D8F2C2A4E0BAB00F39D54 /* EnhancedMediaPlayer.docc */,
+				E80D8F2D2A4E0BAB00F39D54 /* MediaPlayerView.swift */,
+				E80D8F2E2A4E0BAB00F39D54 /* Extensions */,
+				E80D8F312A4E0BAB00F39D54 /* AVPlayerView.swift */,
+				E80D8F322A4E0BAB00F39D54 /* MediaPlayerViewController.swift */,
+				E80D8F332A4E0BAB00F39D54 /* Info.plist */,
+				E80D8F342A4E0BAB00F39D54 /* MediaPlayer.swift */,
+			);
+			path = EnhancedMediaPlayer;
+			sourceTree = "<group>";
+		};
+		E80D8F2E2A4E0BAB00F39D54 /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				E80D8F2F2A4E0BAB00F39D54 /* View+readFrame.swift */,
+				E80D8F302A4E0BAB00F39D54 /* View+wrapInButton.swift */,
+			);
+			path = Extensions;
+			sourceTree = "<group>";
+		};
+		E886E6BA2A4F60B60034A943 /* EnhancedMediaPlayerSample */ = {
+			isa = PBXGroup;
+			children = (
+				E886E6C32A4F62120034A943 /* EnhancedMediaPlayerSampleApp.swift */,
+				E886E6C12A4F62120034A943 /* Preview Content */,
+				E886E6BF2A4F62050034A943 /* Assets.xcassets */,
+				E886E6BB2A4F60B60034A943 /* ContentView.swift */,
+			);
+			path = EnhancedMediaPlayerSample;
+			sourceTree = "<group>";
+		};
+		E886E6C12A4F62120034A943 /* Preview Content */ = {
+			isa = PBXGroup;
+			children = (
+				E886E6C22A4F62120034A943 /* Preview Assets.xcassets */,
+			);
+			path = "Preview Content";
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -201,7 +214,6 @@
 			isa = PBXHeadersBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				AB4B39022A2EFD54001390EA /* EnhancedMediaPlayer.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -215,7 +227,6 @@
 				AB4B38EC2A2EFD53001390EA /* Headers */,
 				AB4B38ED2A2EFD53001390EA /* Sources */,
 				AB4B38EE2A2EFD53001390EA /* Frameworks */,
-				AB4B38EF2A2EFD53001390EA /* Resources */,
 			);
 			buildRules = (
 			);
@@ -305,13 +316,6 @@
 /* End PBXProject section */
 
 /* Begin PBXResourcesBuildPhase section */
-		AB4B38EF2A2EFD53001390EA /* Resources */ = {
-			isa = PBXResourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
 		AB4B38F92A2EFD54001390EA /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -323,8 +327,8 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				AB4B39192A2EFD76001390EA /* Preview Assets.xcassets in Resources */,
-				AB4B39162A2EFD76001390EA /* Assets.xcassets in Resources */,
+				E886E6C42A4F62130034A943 /* Preview Assets.xcassets in Resources */,
+				E886E6C02A4F62050034A943 /* Assets.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -335,17 +339,17 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				AB26ED5A2A3829BF00A8242E /* MediaPlayerViewController.swift in Sources */,
-				AB26ED5F2A408F7A00A8242E /* View+wrapInButton.swift in Sources */,
-				AB4B38F62A2EFD53001390EA /* EnhancedMediaPlayer.docc in Sources */,
-				E885EB042A49FBA400541DC6 /* SettingsMenu.swift in Sources */,
-				AB26ED612A408FE500A8242E /* View+readFrame.swift in Sources */,
-				E80F6F912A4B712800F90F7E /* SettingsPreference.swift in Sources */,
-				EFD792352A4A01C4007C7652 /* MediaPlayerControlsView.swift in Sources */,
-				EFD792372A4A0721007C7652 /* MediaPlayerTappableView.swift in Sources */,
-				AB4B39272A2F071C001390EA /* MediaPlayerView.swift in Sources */,
-				AB26ED582A32628700A8242E /* AVPlayerView.swift in Sources */,
-				AB26ED5C2A3A113A00A8242E /* MediaPlayer.swift in Sources */,
+				E80D8F372A4E0BAB00F39D54 /* View+readFrame.swift in Sources */,
+				E80D8F3C2A4E0BAB00F39D54 /* MediaPlayer.swift in Sources */,
+				E80D8F382A4E0BAB00F39D54 /* View+wrapInButton.swift in Sources */,
+				E8FF428A2A4F5D66003AD6B0 /* SettingsMenu.swift in Sources */,
+				E80D8F362A4E0BAB00F39D54 /* MediaPlayerView.swift in Sources */,
+				E8FF428B2A4F5D66003AD6B0 /* SettingsPreference.swift in Sources */,
+				E80D8F352A4E0BAB00F39D54 /* EnhancedMediaPlayer.docc in Sources */,
+				E80D8F3A2A4E0BAB00F39D54 /* MediaPlayerViewController.swift in Sources */,
+				E8FF428C2A4F5D66003AD6B0 /* MediaPlayerControlsView.swift in Sources */,
+				E80D8F392A4E0BAB00F39D54 /* AVPlayerView.swift in Sources */,
+				E8FF428D2A4F5D67003AD6B0 /* MediaPlayerTappableView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -353,7 +357,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				AB4B39012A2EFD54001390EA /* EnhancedMediaPlayerTests.swift in Sources */,
+				E886E6C62A4F62440034A943 /* EnhancedMediaPlayerTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -361,8 +365,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				AB4B39142A2EFD76001390EA /* ContentView.swift in Sources */,
-				AB4B39122A2EFD76001390EA /* EnhancedMediaPlayerSampleApp.swift in Sources */,
+				E886E6BC2A4F60B60034A943 /* ContentView.swift in Sources */,
+				E886E6C52A4F62130034A943 /* EnhancedMediaPlayerSampleApp.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -511,7 +515,7 @@
 				DYLIB_INSTALL_NAME_BASE = "@rpath";
 				ENABLE_MODULE_VERIFIER = YES;
 				GENERATE_INFOPLIST_FILE = YES;
-				INFOPLIST_FILE = EnhancedMediaPlayer/Info.plist;
+				INFOPLIST_FILE = Sources/EnhancedMediaPlayer/Info.plist;
 				INFOPLIST_KEY_NSHumanReadableCopyright = "";
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
 				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
@@ -543,7 +547,7 @@
 				DYLIB_INSTALL_NAME_BASE = "@rpath";
 				ENABLE_MODULE_VERIFIER = YES;
 				GENERATE_INFOPLIST_FILE = YES;
-				INFOPLIST_FILE = EnhancedMediaPlayer/Info.plist;
+				INFOPLIST_FILE = Sources/EnhancedMediaPlayer/Info.plist;
 				INFOPLIST_KEY_NSHumanReadableCopyright = "";
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
 				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
