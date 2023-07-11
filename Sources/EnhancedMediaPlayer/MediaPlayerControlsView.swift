@@ -10,7 +10,7 @@ struct MediaPlayerControlsView: View {
     var body: some View {
         renderOverlay()
         renderActionButtons()
-            .padding(.horizontal, viewModel.screenWidth / Constants.paddingWidthDivider)
+        renderButtonBar()
     }
 
     @ViewBuilder private func renderOverlay() -> some View {
@@ -21,20 +21,23 @@ struct MediaPlayerControlsView: View {
     }
 
     @ViewBuilder private func renderActionButtons() -> some View {
-        VStack(spacing: .zero) {
-            renderLoop()
-                .frame(maxWidth: .infinity, maxHeight: .infinity)
-            HStack(spacing: .zero) {
-                renderRewind()
-                    .frame(maxWidth: .infinity, alignment: .leading)
-                renderMainButtonState()
-                renderForward()
-                    .frame(maxWidth: .infinity, alignment: .trailing)
-            }
-            .frame(maxWidth: .infinity)
-            renderButton(control: .settings, size: Constants.settingsIconSize)
-                .frame(maxWidth: .infinity, maxHeight: .infinity, alignment: .trailing)
+        HStack(spacing: Constants.defaultPadding) {
+            renderRewind()
+            renderMainButtonState()
+            renderForward()
         }
+        .frame(maxHeight: .infinity)
+    }
+
+    @ViewBuilder private func renderButtonBar() -> some View {
+        HStack(spacing: Constants.defaultPadding) {
+            renderLoop()
+            renderButton(control: .settings, size: Constants.accessoryButtonSize)
+        }
+        .padding(Constants.defaultPadding)
+        .frame(maxWidth: .infinity)
+        .background(Constants.bottomBarColor)
+        .frame(maxHeight: .infinity, alignment: .bottom)
     }
 
     @ViewBuilder private func renderMainButtonState() -> some View {
@@ -46,8 +49,7 @@ struct MediaPlayerControlsView: View {
     }
 
     @ViewBuilder private func renderLoop() -> some View {
-        renderButton(control: .loop, color: viewModel.inLoopEnabled ? .blue : .white)
-            .frame(maxWidth: .infinity, alignment: .trailing)
+        renderButton(control: .loop, color: viewModel.inLoopEnabled ? .blue : .white, size: Constants.accessoryButtonSize)
     }
 
     @ViewBuilder private func renderPlayPause() -> some View {
@@ -73,7 +75,7 @@ struct MediaPlayerControlsView: View {
     @ViewBuilder private func renderButton(
         control: Control,
         color: Color = .white,
-        size: CGFloat = Constants.iconFontSize
+        size: CGFloat = Constants.primaryButtonSize
     ) -> some View {
         control.systemImage
             .font(.system(size: size))
@@ -145,8 +147,10 @@ extension MediaPlayerControlsView {
         static let overlayOpacity: CGFloat = 0.3
         static let seekFactorFormat: String = "%.0fs"
         static let seekFactorDecimalFormat: String = "%.1fs"
-        static let iconFontSize: CGFloat = 40
-        static let settingsIconSize: CGFloat = 20
+        static let primaryButtonSize: CGFloat = 40
+        static let accessoryButtonSize: CGFloat = 24
+        static let defaultPadding: CGFloat = 16
+        static let bottomBarColor: Color = .black.opacity(0.70)
     }
 }
 
