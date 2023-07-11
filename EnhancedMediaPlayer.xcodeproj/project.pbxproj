@@ -73,7 +73,7 @@
 		E80D8F342A4E0BAB00F39D54 /* MediaPlayer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MediaPlayer.swift; sourceTree = "<group>"; };
 		E82C10412A5447060090F94C /* LICENSE.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = LICENSE.md; sourceTree = "<group>"; };
 		E886E6BB2A4F60B60034A943 /* ContentView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
-		E886E6BD2A4F61EC0034A943 /* EnhancedMediaPlayerTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = EnhancedMediaPlayerTests.swift; path = EnhancedMediaPlayerTests/EnhancedMediaPlayerTests.swift; sourceTree = SOURCE_ROOT; };
+		E886E6BD2A4F61EC0034A943 /* EnhancedMediaPlayerTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = EnhancedMediaPlayerTests.swift; path = Tests/EnhancedMediaPlayerTests.swift; sourceTree = SOURCE_ROOT; };
 		E886E6BF2A4F62050034A943 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		E886E6C22A4F62120034A943 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		E886E6C32A4F62120034A943 /* EnhancedMediaPlayerSampleApp.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EnhancedMediaPlayerSampleApp.swift; sourceTree = "<group>"; };
@@ -146,17 +146,9 @@
 		E80D8F132A4E04CB00F39D54 /* Tests */ = {
 			isa = PBXGroup;
 			children = (
-				E80D8F142A4E04CB00F39D54 /* EnhancedMediaPlayerTests */,
-			);
-			path = Tests;
-			sourceTree = "<group>";
-		};
-		E80D8F142A4E04CB00F39D54 /* EnhancedMediaPlayerTests */ = {
-			isa = PBXGroup;
-			children = (
 				E886E6BD2A4F61EC0034A943 /* EnhancedMediaPlayerTests.swift */,
 			);
-			path = EnhancedMediaPlayerTests;
+			path = Tests;
 			sourceTree = "<group>";
 		};
 		E80D8F152A4E04E600F39D54 /* Sources */ = {
