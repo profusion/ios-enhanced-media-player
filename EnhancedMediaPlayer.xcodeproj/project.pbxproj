@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		5F0DC7D92A5C8630004841A5 /* Date+mediaTime.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5F0DC7D82A5C8630004841A5 /* Date+mediaTime.swift */; };
 		AB4B38FC2A2EFD54001390EA /* EnhancedMediaPlayer.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AB4B38F12A2EFD53001390EA /* EnhancedMediaPlayer.framework */; };
 		AB4B391E2A2F02DB001390EA /* EnhancedMediaPlayer.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AB4B38F12A2EFD53001390EA /* EnhancedMediaPlayer.framework */; };
 		AB4B391F2A2F02DB001390EA /* EnhancedMediaPlayer.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = AB4B38F12A2EFD53001390EA /* EnhancedMediaPlayer.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
@@ -60,6 +61,7 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		5F0DC7D82A5C8630004841A5 /* Date+mediaTime.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Date+mediaTime.swift"; sourceTree = "<group>"; };
 		AB4B38F12A2EFD53001390EA /* EnhancedMediaPlayer.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = EnhancedMediaPlayer.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		AB4B38FB2A2EFD54001390EA /* EnhancedMediaPlayerTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = EnhancedMediaPlayerTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		AB4B390F2A2EFD76001390EA /* EnhancedMediaPlayerSample.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = EnhancedMediaPlayerSample.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -180,6 +182,7 @@
 		E80D8F2E2A4E0BAB00F39D54 /* Extensions */ = {
 			isa = PBXGroup;
 			children = (
+				5F0DC7D82A5C8630004841A5 /* Date+mediaTime.swift */,
 				E80D8F2F2A4E0BAB00F39D54 /* View+readFrame.swift */,
 				E80D8F302A4E0BAB00F39D54 /* View+wrapInButton.swift */,
 			);
@@ -345,6 +348,7 @@
 				E8FF428B2A4F5D66003AD6B0 /* SettingsPreference.swift in Sources */,
 				E80D8F352A4E0BAB00F39D54 /* EnhancedMediaPlayer.docc in Sources */,
 				E80D8F3A2A4E0BAB00F39D54 /* MediaPlayerViewController.swift in Sources */,
+				5F0DC7D92A5C8630004841A5 /* Date+mediaTime.swift in Sources */,
 				E8FF428C2A4F5D66003AD6B0 /* MediaPlayerControlsView.swift in Sources */,
 				E80D8F392A4E0BAB00F39D54 /* AVPlayerView.swift in Sources */,
 				E8FF428D2A4F5D67003AD6B0 /* MediaPlayerTappableView.swift in Sources */,
