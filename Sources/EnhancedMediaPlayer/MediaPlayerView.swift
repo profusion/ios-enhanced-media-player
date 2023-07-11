@@ -28,6 +28,8 @@ public struct MediaPlayerView: View {
                     playerState: $viewModel.playerState,
                     seekFactor: viewModel.seekFactor,
                     inLoopEnabled: viewModel.inLoopEnabled,
+                    currentElapsedTime: $viewModel.currentElapsedTimeBinding,
+                    mediaTotalTime: viewModel.mediaTotalTime,
                     onTapAction: { control in viewModel.onTapAction?(control) }
                 ))
             }
@@ -46,6 +48,24 @@ extension MediaPlayerView {
         @Published var seekState: MediaPlayerTappableView.SeekState = .none
         @Published var areControlsVisible: Bool = false
         @Published var player: AVPlayer
+        @Published var videoCurrentTime: Double = .zero
+
+        var currentElapsedTimeBinding: Double {
+            get {
+                videoCurrentTime
+            }
+            set {
+                player.seek(
+                    to: .init(seconds: newValue, preferredTimescale: Constants.defaultTimeScale),
+                    toleranceBefore: .zero,
+                    toleranceAfter: .zero
+                )
+            }
+        }
+
+        var mediaTotalTime: Double {
+            player.currentItem?.duration.seconds ?? Constants.fallbackTotalDuration
+        }
 
         var onTapAction: ((MediaPlayerControlsView.Control) -> Void)?
         var onTapSeekArea: ((MediaPlayerTappableView.Seek) -> Void)?
@@ -66,6 +86,13 @@ extension MediaPlayerView {
         case paused
         case finished
         case loading
+    }
+}
+
+extension MediaPlayerView {
+    enum Constants {
+        static let defaultTimeScale: CMTimeScale = 30
+        static let fallbackTotalDuration: TimeInterval = 1
     }
 }
 

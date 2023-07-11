@@ -5,6 +5,7 @@ import AVFoundation
 
 public class MediaPlayerViewController: UIHostingController<MediaPlayerView> {
     private let viewModel: MediaPlayerView.ViewModel
+    private var timeObserver: Any?
 
     private var tapTimer: Timer?
 
@@ -14,6 +15,12 @@ public class MediaPlayerViewController: UIHostingController<MediaPlayerView> {
         super.init(rootView: .init(viewModel: viewModel))
 
         setupActions()
+    }
+
+    deinit {
+        if let timeObserver {
+            viewModel.player.removeTimeObserver(timeObserver)
+        }
     }
 
     required dynamic init?(coder aDecoder: NSCoder) {
@@ -99,7 +106,8 @@ public class MediaPlayerViewController: UIHostingController<MediaPlayerView> {
 
     private func onLoad() {
         play()
-        observeMediaFinished()
+        addMediaDidFinishObserver()
+        addTimeObserver()
     }
 
     private func onTapSeekArea(_ seek: MediaPlayerTappableView.Seek) {
@@ -146,7 +154,7 @@ public class MediaPlayerViewController: UIHostingController<MediaPlayerView> {
         }
     }
     
-    private func observeMediaFinished() {
+    private func addMediaDidFinishObserver() {
         self.removeObserver()
 
         NotificationCenter.default.addObserver(
@@ -163,6 +171,18 @@ public class MediaPlayerViewController: UIHostingController<MediaPlayerView> {
         }
     }
 
+    private func addTimeObserver() {
+        timeObserver = viewModel.player.addPeriodicTimeObserver(
+            forInterval: Constants.videoUpdateInterval,
+            queue: .main
+        ) { [weak self] time in
+            guard let self, !CMTimeGetSeconds(time).isNaN else { return }
+
+            self.viewModel.videoCurrentTime = CMTimeGetSeconds(time)
+        }
+    }
+
+
     private func removeObserver() {
         NotificationCenter.default.removeObserver(
             self,
@@ -178,5 +198,7 @@ extension MediaPlayerViewController {
         static let seekTapInterval: Double = 1
         static let seekTapAnimationInterval: Double = 0.3
         static let showControlsDelay: Double = 0.5
+        // TODO: this value still need some tweaking/logic
+        static let videoUpdateInterval: CMTime = .init(seconds: 0.1, preferredTimescale: 30)
     }
 }

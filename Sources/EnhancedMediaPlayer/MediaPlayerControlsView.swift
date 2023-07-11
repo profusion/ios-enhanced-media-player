@@ -31,6 +31,7 @@ struct MediaPlayerControlsView: View {
 
     @ViewBuilder private func renderButtonBar() -> some View {
         HStack(spacing: Constants.defaultPadding) {
+            renderTimeBar()
             renderLoop()
             renderButton(control: .settings, size: Constants.accessoryButtonSize)
         }
@@ -96,6 +97,21 @@ struct MediaPlayerControlsView: View {
         }
     }
 
+    @ViewBuilder private func renderTimeBar(color: Color = .blue) -> some View {
+        Slider(value: $viewModel.currentElapsedTime, in: .zero...viewModel.mediaTotalTime) {
+            // No label needed for now
+        } minimumValueLabel: {
+            Text(Date.mediaTime(viewModel.currentElapsedTime, totalTimeInSeconds: viewModel.mediaTotalTime))
+                .foregroundColor(.white)
+                .font(.system(size: Constants.timeFontSize))
+        } maximumValueLabel: {
+            Text(Date.mediaTime(viewModel.mediaTotalTime, totalTimeInSeconds: viewModel.mediaTotalTime))
+                .foregroundColor(.white)
+                .font(.system(size: Constants.timeFontSize))
+        }
+        .tint(color)
+    }
+
     private func handleControl(_ control: Control) {
         // Not very ideal to do this, but as mentioned, we're abusing UIKit + SwiftUI...
         guard control != .settings else {
@@ -111,14 +127,16 @@ extension MediaPlayerControlsView {
     class ViewModel: ObservableObject {
         @Binding var screenWidth: CGFloat
         @Binding var playerState: MediaPlayerView.PlayerState
+        @Binding var currentElapsedTime: TimeInterval
 
         let inLoopEnabled: Bool
         let seekFactor: TimeInterval
+        let mediaTotalTime: TimeInterval
 
         let onTapAction: (Control) -> Void
 
         var formattedSeekFactor: String {
-            seekFactor.truncatingRemainder(dividingBy: 1) == 0 ?
+            seekFactor.truncatingRemainder(dividingBy: 1) == .zero ?
                 String(format: Constants.seekFactorFormat, seekFactor) :
                 String(format: Constants.seekFactorDecimalFormat, seekFactor)
         }
@@ -128,10 +146,14 @@ extension MediaPlayerControlsView {
             playerState: Binding<MediaPlayerView.PlayerState>,
             seekFactor: TimeInterval,
             inLoopEnabled: Bool,
+            currentElapsedTime: Binding<TimeInterval>,
+            mediaTotalTime: TimeInterval,
             onTapAction: @escaping ((Control) -> Void)
         ) {
             self._screenWidth = screenWidth
             self._playerState = playerState
+            self._currentElapsedTime = currentElapsedTime
+            self.mediaTotalTime = mediaTotalTime
             self.seekFactor = seekFactor
             self.inLoopEnabled = inLoopEnabled
             self.onTapAction = onTapAction
