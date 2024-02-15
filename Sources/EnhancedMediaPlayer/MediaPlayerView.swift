@@ -52,7 +52,7 @@ extension MediaPlayerView {
 
         var currentElapsedTimeBinding: Double {
             get {
-                videoCurrentTime
+                player.status == .readyToPlay ? videoCurrentTime : Constants.fallbackDuration
             }
             set {
                 player.seek(
@@ -64,7 +64,10 @@ extension MediaPlayerView {
         }
 
         var mediaTotalTime: Double {
-            player.currentItem?.duration.seconds ?? Constants.fallbackTotalDuration
+            guard let duration = player.currentItem?.duration.seconds, !duration.isNaN else {
+                return Constants.fallbackDuration
+            }
+            return duration
         }
 
         var onTapAction: ((MediaPlayerControlsView.Control) -> Void)?
@@ -92,7 +95,7 @@ extension MediaPlayerView {
 extension MediaPlayerView {
     enum Constants {
         static let defaultTimeScale: CMTimeScale = 30
-        static let fallbackTotalDuration: TimeInterval = 1
+        static let fallbackDuration: TimeInterval = .zero
     }
 }
 
