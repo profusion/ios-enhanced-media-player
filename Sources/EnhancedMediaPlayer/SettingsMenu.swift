@@ -1,8 +1,13 @@
 // SettingsMenu.swift
+
 import SwiftUI
 
 public struct SettingsMenu: View {
-    public init() { }
+    @ObservedObject private var preferences: SettingsPreferences
+        
+    public init(preferences: SettingsPreferences) {
+        self.preferences = preferences
+    }
 
     public var body: some View {
         VStack(spacing: Constants.stackSpacing) {
@@ -13,7 +18,7 @@ public struct SettingsMenu: View {
         .frame(maxHeight: .infinity, alignment: .topLeading)
         .padding(Constants.stackPadding)
     }
-
+    
     @ViewBuilder private func renderSettingsItem() -> some View {
         HStack {
             Image(systemName: Constants.itemIcon)
@@ -35,6 +40,6 @@ extension SettingsMenu {
 
 struct SettingsMenu_Previews: PreviewProvider {
     static var previews: some View {
-        SettingsMenu()
+        SettingsMenu(preferences: .init())
     }
 }

@@ -9,8 +9,8 @@ public class MediaPlayerViewController: UIHostingController<MediaPlayerView> {
 
     private var tapTimer: Timer?
 
-    public init(mediaURL: URL, seekFactor: TimeInterval) {
-        viewModel = .init(player: .init(url: mediaURL), seekFactor: seekFactor)
+    public init(mediaURL: URL, seekFactor: TimeInterval, preferences: SettingsPreferences) {
+        viewModel = .init(player: .init(url: mediaURL), seekFactor: seekFactor, preferences: preferences)
 
         super.init(rootView: .init(viewModel: viewModel))
 

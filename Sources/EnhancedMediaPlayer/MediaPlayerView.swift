@@ -2,6 +2,7 @@
 
 import SwiftUI
 import AVFoundation
+import Combine
 
 public struct MediaPlayerView: View {
     @ObservedObject var viewModel: MediaPlayerView.ViewModel
@@ -49,6 +50,7 @@ extension MediaPlayerView {
         @Published var areControlsVisible: Bool = false
         @Published var player: AVPlayer
         @Published var videoCurrentTime: Double = .zero
+        @Published var preferences: SettingsPreferences
 
         var currentElapsedTimeBinding: Double {
             get {
@@ -73,12 +75,21 @@ extension MediaPlayerView {
         var onTapAction: ((MediaPlayerControlsView.Control) -> Void)?
         var onTapSeekArea: ((MediaPlayerTappableView.Seek) -> Void)?
         var onTapControlsTriggerArea: (() -> Void)?
+        private var cancellable: AnyCancellable?
 
         let seekFactor: TimeInterval
-
-        init(player: AVPlayer, seekFactor: TimeInterval) {
+        
+        init(player: AVPlayer, seekFactor: TimeInterval, preferences: SettingsPreferences) {
             self.player = player
             self.seekFactor = seekFactor
+            self.preferences = preferences
+            observeSettings()
+        }
+
+        func observeSettings() {
+            cancellable = preferences.$rate.sink { [self] newRate in
+                player.rate = newRate.rawValue
+            }
         }
     }
 }
@@ -105,7 +116,8 @@ struct MediaPlayerView_Previews: PreviewProvider {
     static var previews: some View {
         MediaPlayerView(viewModel: .init(
             player: .init(url: testURL),
-            seekFactor: 10
+            seekFactor: 10,
+            preferences: .init()
         ))
     }
 }

@@ -5,14 +5,16 @@ import SwiftUI
 public struct MediaPlayer: UIViewControllerRepresentable {
     private let mediaURL: URL
     private let seekFactor: TimeInterval
+    private let preferences: SettingsPreferences
     
-    public init(url mediaURL: URL, seekFactor: TimeInterval) {
+    public init(url mediaURL: URL, seekFactor: TimeInterval, preferences: SettingsPreferences) {
         self.mediaURL = mediaURL
         self.seekFactor = seekFactor
+        self.preferences = preferences
     }
     
     public func makeUIViewController(context: Context) -> MediaPlayerViewController {
-        let mediaPlayerController = MediaPlayerViewController(mediaURL: mediaURL, seekFactor: seekFactor)
+        let mediaPlayerController = MediaPlayerViewController(mediaURL: mediaURL, seekFactor: seekFactor, preferences: preferences)
         return mediaPlayerController
     }
 

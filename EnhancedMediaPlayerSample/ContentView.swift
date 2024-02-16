@@ -10,7 +10,7 @@ struct ContentView: View {
 
     var body: some View {
         VStack(spacing: .zero) {
-            MediaPlayer(url: URL(string: selected.url)!, seekFactor: Constants.seekFactor)
+            MediaPlayer(url: URL(string: selected.url)!, seekFactor: Constants.seekFactor, preferences: preferences)
                 .frame(height: 300)
 
             Picker(Constants.pickerLabel, selection: $selected) {
@@ -21,7 +21,7 @@ struct ContentView: View {
             .pickerStyle(.segmented)
         }
         .sheet(isPresented: $preferences.isShowingSettingsMenu) {
-            SettingsMenu()
+            SettingsMenu(preferences: preferences)
         }
         .environmentObject(preferences)
     }
