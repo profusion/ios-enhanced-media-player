@@ -4,7 +4,7 @@ import Combine
 public class SettingsPreferences: ObservableObject {
     public init() {}
     
-    @Published public var isShowingSettingsMenu: Bool = true
+    @Published public var isShowingSettingsMenu: Bool = false
     @Published public var rate: PlaybackSpeedValues = .defaultSpeed
 }
 
