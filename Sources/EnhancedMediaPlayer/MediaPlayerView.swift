@@ -16,27 +16,35 @@ public struct MediaPlayerView: View {
         ZStack {
             AVPlayerView(player: viewModel.player, playerState: viewModel.playerState)
 
-            MediaPlayerTappableView(viewModel: .init(
-                seekState: viewModel.seekState,
-                isSeekByTapEnabled: viewModel.isSeekByTapEnabled,
-                onTapSeekArea: { seek in viewModel.onTapSeekArea?(seek) },
-                onTapControlsTriggerArea: { viewModel.onTapControlsTriggerArea?() }
-            ))
-
-            if viewModel.areControlsVisible {
-                MediaPlayerControlsView(viewModel: .init(
-                    screenWidth: $screenWidth,
-                    playerState: $viewModel.playerState,
-                    seekFactor: viewModel.seekFactor,
-                    inLoopEnabled: viewModel.inLoopEnabled,
-                    currentElapsedTime: $viewModel.currentElapsedTimeBinding,
-                    mediaTotalTime: viewModel.mediaTotalTime,
-                    onTapAction: { control in viewModel.onTapAction?(control) }
-                ))
+            if viewModel.player.status != .readyToPlay {
+                ProgressView()
+            } else {
+                renderActivePlayerViews()
             }
         }
         .readFrame { size in
             screenWidth = size.width
+        }
+    }
+    
+    @ViewBuilder private func renderActivePlayerViews() -> some View {
+        MediaPlayerTappableView(viewModel: .init(
+            seekState: viewModel.seekState,
+            isSeekByTapEnabled: viewModel.isSeekByTapEnabled,
+            onTapSeekArea: { seek in viewModel.onTapSeekArea?(seek) },
+            onTapControlsTriggerArea: { viewModel.onTapControlsTriggerArea?() }
+        ))
+
+        if viewModel.areControlsVisible {
+            MediaPlayerControlsView(viewModel: .init(
+                screenWidth: $screenWidth,
+                playerState: $viewModel.playerState,
+                seekFactor: viewModel.seekFactor,
+                inLoopEnabled: viewModel.inLoopEnabled,
+                currentElapsedTime: $viewModel.currentElapsedTimeBinding,
+                mediaTotalTime: viewModel.mediaTotalTime,
+                onTapAction: { control in viewModel.onTapAction?(control) }
+            ))
         }
     }
 }
